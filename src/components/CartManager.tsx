@@ -43,7 +43,7 @@ const CartManager = ({products}:{products:Product[]}) => {
                                 return (
                                     <tr className="border-b hover:bg-gray-50 transition" key={item._id}>
                                         <td className="py-4 px-4 font-medium text-gray-800">{item.name}</td>
-                                        <td className="py-4 px-4 text-gray-600">{item.short_description}</td>
+                                        <td className="py-4 px-4 text-gray-600">{item.description.substring(0,100)}...</td>
                                         <td className="py-4 px-4 text-right text-gray-800">${item.price}</td>
                                         <td className="py-4 px-4 text-center">
                                             <input

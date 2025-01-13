@@ -20,7 +20,7 @@ export default function ProductGrid({products,addToCart}:{products:Product[],add
               {product.name}
             </h2>
             <p className="text-sm text-gray-500 mt-2 line-clamp-2">
-              {product.description.substring(0,10)}
+              {product.description.substring(0,100)}...
             </p>
             <div className="flex items-center justify-between mt-4">
               <p className="text-lg font-bold text-gray-900">${product.price}</p>
