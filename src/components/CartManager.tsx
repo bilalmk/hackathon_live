@@ -6,9 +6,9 @@ import ProductGrid from './ProductGrid'
 import { Product } from '@/types/product.js'
 
 const CartManager = ({products}:{products:Product[]}) => {
-    const [cart,setCart] = useState([])
+    const [cart,setCart] = useState<Product[]>([])
 
-    const handleAddToCart=(product)=>
+    const handleAddToCart=(product:Product)=>
     {
         setCart((prevProduct)=>[...prevProduct,product])
     }
