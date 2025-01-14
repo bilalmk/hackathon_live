@@ -4,5 +4,6 @@ export type Product = {
     description:string,
     price:number,
     image_url:string,
-    rating:number
+    rating:number,
+    quantity:number
 }

@@ -10,8 +10,8 @@ export default function ProductGrid({products,addToCart}:{products:Product[],add
             <Image
               src={product.image_url}
               alt={product.name}
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit:"cover" }}
               className="p-4"
             />
           </div>

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { CartContextProvider } from "@/context/CartContext";
+import CartIcon from "@/components/CartIcon";
+import ToastProvider from "@/toast/toastify";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <CartContextProvider>
+          <ToastProvider/>
+          <div className="flex flex-row justify-between w-[50%] ml-auto">
+            <CartIcon/>
+          </div>
         {children}
+        </CartContextProvider>
       </body>
     </html>
   );
