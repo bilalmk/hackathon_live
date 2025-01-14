@@ -1,4 +1,6 @@
-import CartManager from "@/components/CartManager";import { client } from "@/sanity/lib/client";
+import CartManager from "@/components/CartManager";
+import ProductGrid from "@/components/ProductGrid";
+import { client } from "@/sanity/lib/client";
 
 
 const getProducts = async ()=>{
@@ -22,6 +24,10 @@ const getProducts = async ()=>{
 export default async function Home() {
   const products = await getProducts()
   return (
-    <CartManager products={products}/>
+    <>
+      <ProductGrid products={products}/>
+      <CartManager/>
+    </>
+    
   );
 }

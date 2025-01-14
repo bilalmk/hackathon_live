@@ -1,7 +1,10 @@
+'use client'
 import { Product } from "@/types/product.js"
+import { useCart } from '@/context/CartContext'
 import Image from "next/image"
 
-export default function ProductGrid({products,addToCart}:{products:Product[],addToCart:(product:Product)=>void}){
+export default function ProductGrid({products}:{products:Product[]}){
+  const {handleAddToCart} = useCart()
   return (
   <div className="w-[70%] m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
       {products.map((product: Product) => (
@@ -11,8 +14,7 @@ export default function ProductGrid({products,addToCart}:{products:Product[],add
               src={product.image_url}
               alt={product.name}
               layout="fill"
-              objectFit="contain"
-              className="p-4"
+              className="p-4 object-cover"
             />
           </div>
           <div className="p-4">
@@ -28,7 +30,7 @@ export default function ProductGrid({products,addToCart}:{products:Product[],add
                 {product.rating}
               </p>
             </div>
-            <button onClick={()=>addToCart(product)} className="w-full mt-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition">
+            <button onClick={()=>handleAddToCart(product)} className="w-full mt-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition">
               Add to Cart
             </button>
           </div>
